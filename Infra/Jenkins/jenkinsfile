@@ -9,7 +9,9 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
+        dir('Infra') {
         git 'https://github.com/kashish6707/APP-deploy.git'
+        }
       }
     }
 
