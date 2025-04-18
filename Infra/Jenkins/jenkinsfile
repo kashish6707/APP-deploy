@@ -9,14 +9,14 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git 'https://github.com/your-username/your-repo.git'
+        git 'https://github.com/kashish6707/APP-deploy.git'
       }
     }
 
     stage('Init Terraform') {
       steps {
         dir('infra') {
-          sh 'terraform init'
+          sh 'pwd;cd Infra/ ; terraform init'
         }
       }
     }
@@ -24,7 +24,7 @@ pipeline {
     stage('Terraform Plan') {
       steps {
         dir('infra') {
-          sh 'terraform plan -out=tfplan'
+          sh 'pwd;cd Infra/ ; terraform plan -out=tfplan'
         }
       }
     }
